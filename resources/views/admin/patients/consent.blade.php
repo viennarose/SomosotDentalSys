@@ -1,0 +1,103 @@
+@extends('layouts.admin')
+@section('content')
+        <a href="{{url('/admin/patients')}}"><i class="bi bi-arrow-left"></a></i>
+        <h1 class="text-center">INFORMED CONSENT</h1>
+
+        <div>
+        <p class="text-justify"><span class="fw-bold"> TREATMENT TO BE DONE:</span> I understand and consent to have any treatment done by the dentist after the procedure, the risks & benefits & cost have been fully explained. These treatments include, but are not limited to, x-rays, cleanings, periodontal treatments, filing, crowns, bridges, all types of extraction, root canals, &/or dentures, local anesthetics & surgical cases.</p>
+        </div>
+        <div>
+        <p class="text-justify">
+            <span class="fw-bold">DRUGS AND MEDICATION:</span> I understand that antibiotics, analgesics & other medications can cause allergic reactions like redness & swelling of tissues, pain, itching, vomiting, &/or anaphylactic & shock.
+        </p>
+        </div>
+        <div >
+        <p class="text-justify"> <span class="fw-bold">CHANGES IN TREATMENT PLAN:</span> I understand that during treatment it may be necessary to change/add procedures because of conditions found while working on the teeth that was not discovered during examination. For example, root canal therapy may be needed following routine restorative procedures. I give my permission to the dentist to make any/all changes and additions as necessary w/ my responsibility to pay all the costs agreed.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> RADIOGRAPH:</span> I understand that an x-ray shot or a radiograph maybe necessary as part of diagnostic aid to come up with tentative diagnostics of my Dental problem and to make a good treatment plan, but, this will not give me a 100% assurance for the accuracy of the treatment since all dental treatments are subject to unpredictable complications that later on may lead to sudden change of treatment plan and subject to new changes.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> REMOVAL OF TEETH:</span> I understand that alternative to tooth removal (root canal therapy, crowns & periodontal surgery, etc.) & I completely understand these alternatives, including their risk & benefits prior to authorizing the dentist to remove teeth & any other structures necessary for reasons above. I understand that removing teeth does not always remove all infections, if present, & it may be necessary to have further treatment. I understand the risk involved in having teeth removed, such as pain, swelling, spread of infection, dry socket, fractured jaw, loss of feeling on the teeth, lips, tongue & surrounding tissue that can last for an indefinite period of time. I understand that I may need further treatment under a specialist if complications arise during of following treatment.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> CROWNS (CAPS) & BRIDGES:</span> Preparing a tooth may irritate the nerve tissue in the center of the tooth, leaving the tooth extra sensitive to heat, cold & pressure. Treating such irritation may involve using special toothpastes, mouth rinses or root canal therapy. I understand that sometimes it is not possible to match the color of natural teeth exactly with artificial teeth. I further understand that I may be wearing temporary crowns, which may come off easily & that I must be careful to ensure that they are kept on until the permanent crowns are delivered. It is my responsibility to return for permanent cementation within 20 days from tooth preparation, as excessive days delay may allow for tooth movement, which may necessitate a remake of the crown, bridge/cap. I understand there will be additional charges for remakes due to my delaying of permanent cementation, & I realize that final opportunity to make changes in my new crown, bridges or cap (including shape, fit, size, & color) will be before permanent cementation.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> ENDODONTICS (ROOT CANAL):</span> I understand there is no guarantee that a root canal treatment will a save a tooth & that complications can occur from the treatment & that occasionally root canal filling materials may extend through the tooth which does not necessarily effect the success of treatment. I understand that the endodontics files & drills are very fine instruments & stresses vented in their manufacture & calcifications present in teeth can cause them to break during use. I understand that referral to endodontist for additional treatments may be necessary following any root canal treatment & I agree that I am responsible for any additional cost for treatment performed by the endodontist. I understand that a tooth may require removal in spite all efforts to save it.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold">
+            PERIODONTAL DISEASE:</span> I understand that periodontal disease is a serious condition causing gum & bone inflammation &/or loss & that can lead eventually to the loss of my teeth. I understand the alternative treatment plans to correct periodontal disease, including gum surgery tooth extractions with or without replacement. I understand that undertaking any dental procedures may have future adverse effect on my periodontal Conditions.
+        </p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> FILLINGS:</span> I understand that care must be exercised in chewing on fillings, especially during the first 24 hours to avoid breakage. I understand that a more extensive filling or a crown may be required, as additional decay or fracture may become evident after initial excavation. I understand that significant sensitivity is a common, but usually temporary, after-effect of a newly placed filling. I further understand that filling a tooth may irritate the nerve tissue creating sensitivity & treating such sensitivity could require root canal therapy or extractions.</p>
+        </div>
+        <div>
+        <p class="text-justify"><span class="fw-bold"> DENTURES:</span> I understand that wearing of dentures can be difficult. Sore spots, altered speech & difficulty in eating are common problems. Immediate dentures (placement of denture immediately after extractions) may be painful. Immediate dentures may require considerable adjusting & several relines. I understand that it is my responsibility to return for delivery of dentures. I understand that failure to keep my delivery appointment may result in poorly fitted dentures. If a remake is required due to my delays of more than 30 days, there will be additional charges. A permanent reline will be needed later, which is not included in the initial fee. I understand that all adjustment or alterations of any kind after this initial period is subject to charges.</p>
+        </div>
+        <div>
+        <p class="text-justify fw-bold">I understand that dentistry is not exact science and that no dentist can properly guarantee accurate results all the time.</p>
+        </div>
+        <div>
+        <p class="text-justify">I hereby authorize any of the doctors/dental auxiliaries to proceed with & perform the dental restorations & treatments as explained to me. </p>
+        </div>
+        <form action="consent" method="POST">
+        @csrf
+        <div class="row">
+        <div class="col">
+            <div id="sign" style="height: 50%; width:100%;"></div>
+            <br>
+            <p class="text-center">Patient/Parent/Guardian Signature</p>
+            @error('patientSig')<span class="error text-danger">Please sign the consent to proceed</span>@enderror
+            <textarea name="patientSig" id="signature" cols="30" rows="10" style="display:none"></textarea>
+            <button class="btn btn-danger" id="clear">Clear Signature</button>
+        </div>
+        <div class="col">
+
+            <div id="sign2" style="height: 50%; width:100%;"></div>
+            <br>
+            <p class="text-center">Dentist Signature</p>
+            @error('dentistSig')<span class="error text-danger">Please sign the consent to proceed</span>@enderror
+            <textarea name="dentistSig" id="signature2" cols="30" rows="10" style="display:none"></textarea>
+            <button class="btn btn-danger" id="clear2">Clear Signature</button>
+
+        </div>
+        <br>
+        </div>
+
+        <button class="btn btn-primary me-5 float-end" type="submit">Save</button>
+
+        </form>
+        <br>
+
+
+
+</div>
+@endsection
+
+@section('script')
+
+
+<script>
+    var sign = $('#sign').signature({syncField:'#signature', syncFormat:'PNG'});
+    var sign2 = $('#sign2').signature({syncField:'#signature2', syncFormat:'PNG'});
+
+
+    $('#clear').click(function(e){
+        e.preventDefault();
+        sign.signature('clear');
+        $('#signature').val('');
+    });
+    $('#clear2').click(function(e){
+        e.preventDefault();
+        sign2.signature('clear');
+        $('#signature2').val('');
+    });
+
+    function buttonchange(){
+        document.getElementById("button").style.backgroundColor="#911";
+    }
+</script>
+@endsection
