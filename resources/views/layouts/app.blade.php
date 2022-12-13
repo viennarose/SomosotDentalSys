@@ -33,8 +33,9 @@
         @include('layouts.inc.frontend.navbar')
         <main class="">
             @yield('content')
-            <!-- Messenger Chat Plugin Code -->
-        <!-- Messenger Chat Plugin Code -->
+
+
+<!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
     <!-- Your Chat Plugin code -->
