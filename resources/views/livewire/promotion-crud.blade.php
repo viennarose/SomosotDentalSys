@@ -93,12 +93,12 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <input type="text" wire:model='title' name="title" id="title"
-                                    class="form-contro-lg form-control" placeholder="Service Title">
+                                    class="form-contro-lg form-control" placeholder="Promotion Title">
                                     @error('title')<span class="error text-danger">{{$message}}</span>@enderror
                             </div>
                             <div class="from-group">
                                 <textarea class="form-control" wire:model="description" id="description" cols="30"
-                                    rows="10"  placeholder="Service Description"></textarea>
+                                    rows="10"  placeholder="Promotion Description"></textarea>
                                 @error('description')<span class="error text-danger">{{$message}}</span>@enderror
                             </div>
                             <div class="from-group">
