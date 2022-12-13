@@ -18,7 +18,7 @@ class RemindMail extends Mailable
      *
      * @return void
      */
-    protected $firstName, $schedule, $refNum, $services_id;
+    // protected $firstName, $schedule, $refNum, $services_id;
     public function __construct()
     {
         // $this->firstName = $firstName;

@@ -40,8 +40,8 @@ class SendEmail extends Command
             echo $hrsDiff . "\n";
             if($hrsDiff<=1){
                 //echo "Sending mail to $appt->email \n";
-                Mail::to($appt->email)->send(new notifyMail
-                ($appt->firstName, $appt->lastName, $appt->schedule, $appt->refNum));
+                Mail::to($appt->email)->send(new notifyMail);
+                // ($appt->firstName, $appt->lastName, $appt->schedule, $appt->refNum));
             }else {
                 echo "$appt->firstName is not within one hour of scheudle. \n";
             }

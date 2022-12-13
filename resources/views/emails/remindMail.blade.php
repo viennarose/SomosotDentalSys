@@ -93,22 +93,22 @@
                 <th>Appointment Reminder!</th>
             </tr>
         </thead>
-        <tbody>
+        {{-- <tbody>
             <tr>
-                <td><span style="font-weight: bold">Name:</span> {{$firstName}} {{$lastName}}</td>
+                <td><span style="font-weight: bold">Name:</span> {{$this->firstName}} {{$this->lastName}}</td>
             </tr>
             <tr>
-                <td><span style="font-weight: bold">Appointment Schedule:</span> {{\Carbon\Carbon::parse($schedule)->format('F j, Y h:i a')}} <br>
+                <td><span style="font-weight: bold">Appointment Schedule:</span> {{\Carbon\Carbon::parse($this->schedule)->format('F j, Y h:i a')}} <br>
                 </td>
-                {{-- <td>{{ \Carbon\Carbon::parse($schedule)->format('F j, Y h:i a')}} </td><br> --}}
+
             </tr>
             <tr>
-                <td><span style="font-weight: bold">Reference Code:</span> {{$refNum}}<br>
+                <td><span style="font-weight: bold">Reference Code:</span> {{$this->refNum}}<br>
                     This will serve as your invoice. Should you want to cancel your appointment, use this code. <br>
                      Please be reminded that you can only cancel your appointment before your schedule.
                 </td>
             </tr>
-        </tbody>
+        </tbody> --}}
     </table>
 
     <br>

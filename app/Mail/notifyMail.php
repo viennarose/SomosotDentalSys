@@ -13,19 +13,19 @@ class notifyMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $firstName, $lastName, $schedule, $refNum;
+    // protected $firstName, $lastName, $schedule, $refNum;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($firstName, $lastName, $schedule, $refNum)
+    public function __construct()
     {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->schedule = $schedule;
-        $this->refNum = $refNum;
+        // $this->firstName = $firstName;
+        // $this->lastName = $lastName;
+        // $this->schedule = $schedule;
+        // $this->refNum = $refNum;
     }
 
     /**
