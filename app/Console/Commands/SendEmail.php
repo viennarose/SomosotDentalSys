@@ -38,7 +38,7 @@ class SendEmail extends Command
              echo "time now: " . now() . "\n";
             $hrsDiff = $appt->schedule->diffInHours(now());
             echo $hrsDiff . "\n";
-            if($hrsDiff<=3){
+            if($hrsDiff<=16){
                 //echo "Sending mail to $appt->email \n";
                 Mail::to($appt->email)->send(new notifyMail
                 ($this->firstName, $this->lastName, $this->schedule, $this->refNum));
