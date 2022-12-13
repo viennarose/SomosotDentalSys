@@ -33,7 +33,7 @@ class TimeBetween implements Rule
         //$now =  new DateTime();
         //$earliestTime = $now->addMinutes(120);
         $earliestTime = Carbon::createFromTimeString('8:00:00');
-        $lastTime = Carbon::createFromTimeString('17:00:00');
+        $lastTime = Carbon::createFromTimeString('19:00:00');
 
 
         // $now = new DateTime();

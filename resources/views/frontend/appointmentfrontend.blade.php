@@ -39,7 +39,7 @@
         disabledWeekDays:[0],
         todayBtn: true,
         minTime:'8:00',
-        maxTime:'17:00',
+        maxTime:'19:00',
         minDate: new Date(),
         todayButton:true,
         scrollTime:true,
