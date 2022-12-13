@@ -8,13 +8,14 @@
             @if($images->count() > 0)
                 <div class="row float-center">
                 @foreach($images as $img)
+                @if ($img->status == 0)
                 <div class="col" data-aos="zoom-in-up"><a href="{{url('set-appointment/'. $img->id)}}" class="text-decoration-none text-dark">
                     <div class="card m-2 shadow-lg btnh" style="width: 300px; height:300px">
                         <img class="card-img-top" src="{{asset('storage')}}/{{$img->image}}" alt="">
-                    <div class="card-body">
-                    <h4 class="card-title mt-2">{{$img->service_type}}</h3>
-                    <p class="" style="font-size: 10px; text-align: justify;">{{$img->description}}</p>
-                    </div></a>
+                        <div class="card-body">
+                        <h4 class="card-title mt-2">{{$img->service_type}}</h3>
+                        <p class="" style="font-size: 10px; text-align: justify;">{{$img->description}}</p>
+                    </div></a></div>
                 </div>
                 {{-- <div class="col" data-aos="zoom-in-up"><a href="{{url('/set-appointment')}}" class="text-decoration-none text-dark">
                     <div class="card m-2 shadow-lg btnh" style="width: 300px; height:300px">
@@ -25,9 +26,10 @@
                     </div>
                 </div></a> --}}
 
-                </div>
-                @endforeach
+               @endif
+            @endforeach
             @endif
         </div>
     </div>
 </div>
+

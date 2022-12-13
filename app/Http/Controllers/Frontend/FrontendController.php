@@ -24,7 +24,7 @@ class FrontendController extends Controller
     }
 
     public function viewServices(){
-        $images = Service::where('status', '0')->get();
+        $images = Service::get();
         return view('frontend.services', compact('images'));
     }
 
