@@ -41,7 +41,7 @@ class SendEmail extends Command
             if($hrsDiff<=3){
                 //echo "Sending mail to $appt->email \n";
                 Mail::to($appt->email)->send(new notifyMail
-                       );
+                ($this->firstName, $this->lastName, $this->schedule, $this->refNum));
             }else {
                 echo "$appt->firstName is not within one hour of scheudle. \n";
             }
