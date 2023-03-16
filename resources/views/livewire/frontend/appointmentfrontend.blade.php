@@ -1,5 +1,4 @@
 <div>
-
     @if ($currentStep == 1)
     <div class="card border-0">
         <div wire:loading wire:target='increaseStep'>
